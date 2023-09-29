@@ -1,3 +1,4 @@
+//local storage / validate
 function submitStudentId() {
     var studentId = document.getElementById("studentId").value;
     var program = document.getElementById("program").value;
@@ -33,9 +34,7 @@ function registerStudent() {
         success: function (response) {
             if (response.success) {
                 var queueNumber = response.queue_number;
-                // Set the queue number in the modal
                 document.getElementById("queueNumber").innerText = queueNumber;
-                // Show the third modal
                 $('#thirdModal').modal('show');
             } else {
                 alert("Error: " + response.message);
@@ -88,7 +87,7 @@ $(".btn").click(function() {
     var modalTitle = $(this).data("title");
     
 
-    // Update the titles of all modals, including admissionModal
+    // Update modals
     updateModalTitle("#firstModal", modalTitle);
     updateModalTitle("#secondModal", modalTitle);
     updateModalTitle("#thirdModal", modalTitle);

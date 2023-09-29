@@ -16,12 +16,9 @@
 
 <body>
     <script>
-        // Retrieve the userData object from local storage
         var studentId = localStorage.getItem("studentId");
         var studentId = localStorage.getItem("program");
-
-            // Use the studentId and program as needed
-            console.log("Student ID from index.html: " + program);
+            console.log("Student ID: " + program);
 
 
     </script>
@@ -51,6 +48,8 @@
                     <a href="academics.html" class="fw-bold btn btn-yellow p-5 m-2 flex-grow-1">ACADEMICS</a>
                     <a href="otheroffices.html" class="fw-bold btn btn-blue p-5 m-2 flex-grow-1">OTHER OFFICES</a>
                 </div>
+                <button onclick="history.back()" class="btn btn-back p-1 m-2 float-end"><img src="assets/backbtn.png" alt="Back" class="img-fluid"
+                    style="max-height: auto; max-width: 100%;"></button>
             </div>
         </div>
     </div>
@@ -63,9 +62,8 @@
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header d-block border-0">
-                    <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="modalTitle1">ADMISSION
+                    <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="modalTitle1">Loading...
                     </h1>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body text-center custom-italic custom-bold custom-primary-color">
                     Do you wish to queue at the selected office?
@@ -104,8 +102,6 @@
         </div>
     </div>
     <!-- 3rd MODAL REGISTRAR ENDS -->
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
