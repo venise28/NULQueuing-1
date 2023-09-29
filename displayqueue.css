@@ -1,0 +1,136 @@
+body {
+    background-image: url("assets/images/nulagunahero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.time-araa-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 3rem 0 3rem;
+}
+
+.time-araa-container h1 {
+    font-size: 3.5rem;
+}
+
+.time-araa-container h5 {
+    font-size: 2rem;
+}
+
+.araa-office {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+    padding: 1rem 6rem;
+    margin: 1rem 0;
+
+    background-color: #34418E;
+    border-radius: 20px;
+    color: #FFD41C;
+}
+
+.araa-office h4 {
+    flex: 1;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.araa-office h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.acgi-office-container {
+    margin: 4.5rem 3rem 0 3rem;
+}
+
+.acgi-office-container .office-queue-two{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+
+    color: #34418E;
+
+    padding: 1rem 0;
+}
+
+.acgi-office h1, h5 {
+    font-size: 2.5rem;
+}
+
+/* MEDIA QUERY*/
+@media (max-width: 1280px) {
+    html {
+        font-size: 90%;
+    }
+
+    .time-araa-container {
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 70%;
+    }
+
+    .time-araa-container {
+        margin-top: 10rem;
+    }
+    
+    .araa-office{
+        margin: 2.5rem 0;
+    }
+}
+
+@media (max-width: 772px) {
+    html{
+        font-size: 70%;
+    }
+
+    .time-araa-container {
+        flex-direction: column;
+    }
+
+    .time-araa-container .header {
+        text-align: center;
+    }
+
+    .araa-office{
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    html{
+        font-size: 55%;
+    }
+    
+    .office-queues-one {
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html{
+        font-size: 50%;
+    }
+
+    .araa-office {
+        padding: 0 3rem;
+    }
+
+    .araa-office h4, .acgi-office h5 {
+        font-size: 2rem;
+    }
+}

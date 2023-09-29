@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet"  href="displayqueue.css">
+    <link href='http://fonts.googleapis.com/css?family=' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <!-- BODY ONE -->
+    <div class="time-araa-container">
+        <div class="header">
+            <h5 id="date"></h5>
+            <h1 id="time"></h1>
+        </div>
+
+        <div class="office-queues-one">
+            <div class="office-queue araa-office">
+                <h4>ADMISSIONS</h4>
+                <svg width="75px" height="75px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="#FFD41C" stroke-width="0.6">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g id="Interface / Line_L">
+                            <path id="Vector" d="M12 19V5" stroke="<svg viewBox=" 0="" 24="" 24"="" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="Interface / Line_L">
+                                        <path id="Vector" d="M12 19V5" stroke="#FFD41C" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </g>
+                                </g>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <h1 class="queue-number" id="admissionQueue">Loading...</h1>
+            </div>
+            <div class="office-queue araa-office">
+                <h4>REGISTRAR</h4>
+                <svg width="75px" height="75px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="#FFD41C" stroke-width="0.6">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g id="Interface / Line_L">
+                            <path id="Vector" d="M12 19V5" stroke="<svg viewBox=" 0="" 24="" 24"="" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="Interface / Line_L">
+                                        <path id="Vector" d="M12 19V5" stroke="#FFD41C" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </g>
+                                </g>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <h1 class="queue-number" id="registrarQueue">Loading...</h1>
+            </div>
+            <div class="office-queue araa-office">
+                <h4>ACCOUNTING</h4>
+                <svg width="75px" height="75px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="#FFD41C" stroke-width="0.6">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g id="Interface / Line_L">
+                            <path id="Vector" d="M12 19V5" stroke="<svg viewBox=" 0="" 24="" 24"="" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="Interface / Line_L">
+                                        <path id="Vector" d="M12 19V5" stroke="#FFD41C" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </g>
+                                </g>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <h1 class="queue-number" id="accountingQueue">Loading...</h1>
+            </div>
+            <div class="office-queue araa-office">
+                <h4>ASSETS</h4>
+                <svg width="75px" height="75px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="#FFD41C" stroke-width="0.6">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g id="Interface / Line_L">
+                            <path id="Vector" d="M12 19V5" stroke="<svg viewBox=" 0="" 24="" 24"="" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <g id="Interface / Line_L">
+                                        <path id="Vector" d="M12 19V5" stroke="#FFD41C" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </g>
+                                </g>" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <h1 class="queue-number" id="assetsQueue">Loading...</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- BODY TWO -->
+    <div class="acgi-office-container">
+        <div class="office-queue-two">
+            <div class="office-queue acgi-office">
+                <h5>Academics</h5>
+                <h1 class="queue-number" id="academicsQueue">Loading...</h1>
+            </div>
+            <div class="office-queue acgi-office">
+                <h5>Clinic</h5>
+                <h1 class="queue-number" id="clinicQueue">Loading...</h1>
+            </div>
+            <div class="office-queue acgi-office">
+                <h5>Guidance</h5>
+                <h1 class="queue-number" id="guidanceQueue">Loading...</h1>
+            </div>
+            <div class="office-queue acgi-office">
+                <h5>ITRO</h5>
+                <h1 class="queue-number" id="itroQueue">Loading...</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scriptq.js"></script>
+</body>
+
+</html>

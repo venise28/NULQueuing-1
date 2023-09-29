@@ -1,0 +1,134 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.blue-bg {
+    background-color: #34418E;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nu_color{
+    color: #34418E;
+}
+
+.img_logo {
+    margin-top: 40%;
+}
+
+.btn-blue {
+    background-color:#34418E;
+    border-radius: 25px;
+    color: #FFD41C;
+    font-size: x-large;
+}
+
+.btn-blue:hover {
+    background-color:#34418E;
+    border-radius: 25px;
+    color: #FFD41C;
+    font-size: x-large;
+
+}
+
+.btn-yellow {
+    background-color:#FFD41C;
+    border-radius: 25px;
+    color: #34418E;
+    font-size: x-large;
+}
+
+.btn-yellow:hover {
+    background-color:#FFD41C;
+    border-radius: 25px;
+    color: #34418E;
+    font-size: x-large;
+}
+
+.modal-secondary {
+    font-size: .8rem !important;
+}
+
+.btn-yes {
+    background-color: #34418E !important;
+    color: #FFD41C !important;
+    font-weight: bold;
+}
+
+.btn-no {
+    background-color: #FFD41C!important;
+    color: #34418E!important;
+    font-weight: bold;
+}
+
+.queue-number {
+    font-weight: bold !important;
+}
+
+.modal-dialog {
+    margin-top: 15rem !important;
+}
+
+/* CUSTOM CSS STARTS */
+.custom-italic {
+    font-style: italic;
+}
+
+.custom-bold{
+    font-weight: bold;
+}
+
+.custom-primary-color {
+    color:#34418E !important;
+}
+
+.custom-secondary-color {
+    color:#FFD41C !important;
+}
+/* CUSTOM CSS ENDS */
+
+/* index css */
+.custom-header {
+    background-color: #34418E; /* Change this to your desired custom color */
+    color: #fff; /* Text color inside the header */
+}
+
+.btn-select-blue {
+    background-color:#34418E;
+    border-radius: 10px;
+    color: #FFD41C;
+    font-size: x-large;
+}
+
+.btn-select-blue:hover {
+    background-color:#34418E;
+    border-radius: 10px;
+    color: #FFD41C;
+    font-size: x-large;
+
+}
+
+.btn-select-yellow {
+    background-color:#FFD41C;
+    border-radius: 10px;
+    color: #34418E;
+    font-size: x-large;
+}
+
+.btn-select-yellow:hover {
+    background-color:#FFD41C;
+    border-radius: 10px;
+    color: #34418E;
+    font-size: x-large;
+}
+
+.option-font {
+    font-size: 80%;
+}
+
+
+
+
+

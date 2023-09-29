@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link href='http://fonts.googleapis.com/css?family=' rel='stylesheet' type='text/css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="rounded-end-5 col-4 blue-bg">
+                <img src="assets/NU_shield.svg" alt="Image" class="img-fluid img_logo" style="max-height: auto; max-width: 40%;">
+                <div class="mt-4">
+                    <h1 class="fw-bolder text-light text-center">NU LAGUNA</h1>
+                    <h4 class="fw-bold text-light text-center">QUEUING SYSTEM</h4>
+                </div>
+
+            </div>
+            <div class="col-8 p-5">
+                <h4 class="fst-italic fs-3 p-5 fw-bold text-center nu_color">Howdy, Nationalian! Please select your office.</h4>
+                <div class="btn_selection d-flex justify-content-center align-items-center flex-wrap">
+                    <button href="#" class="fw-bold btn btn-blue p-5 m-2 flex-grow-1" data-bs-toggle="modal" data-bs-target="#firstModal">COLLEGE OF COMPUTER STUDIES DEAN’S OFFICE</button>
+                    <button href="#" class="fw-bold btn btn-yellow p-5 m-2 flex-grow-1" data-bs-toggle="modal" data-bs-target="#firstModal">COLLEGE OF ENGINEERING AND ARCHITECTURE DEAN’S OFFICE</button>
+                    <button href="#" class="fw-bold btn btn-blue p-5 m-2 flex-grow-1" data-bs-toggle="modal" data-bs-target="#firstModal">Mr. Marlon Diloy (CCS Dean)</button>
+                    <button href="#" class="fw-bold btn btn-yellow p-5 m-2 flex-grow-1" data-bs-toggle="modal" data-bs-target="#firstModal">Mr. Marlon Diloy (CCS Dean)</button> 
+                    <button href="#" class="fw-bold btn btn-blue p-5 m-2 flex-grow-1" data-bs-toggle="modal" data-bs-target="#firstModal">Mr. Marlon Diloy (CCS Dean)</button>
+                    
+                </div>
+                <button onclick="history.back()" class="btn btn-back p-1 m-2 float-end"><img src="assets/backbtn.png" alt="Back" class="img-fluid"
+                  style="max-height: auto; max-width: 100%;"></button>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="firstModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md">
+          <div class="modal-content">
+              <div class="modal-header d-block border-0">
+                  <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="exampleModalLabel">REGISTRAR</h1>
+                  <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+              </div>
+              <div class="modal-body text-center custom-italic custom-bold custom-primary-color">
+                  Do you wish to queue at the selected office?
+              </div>
+              <div class="modal-footer d-flex justify-content-center border-0">
+                  <button type="button" class="btn btn-yes px-4 rounded-pill" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#secondModal">YES</button>
+                  <button type="button" class="btn btn-no px-4 rounded-pill" data-bs-dismiss="modal">NO</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- 1st MODAL REGISTRAR ENDS -->
+
+    <!-- 2nd MODAL REGISTRAR STARTS -->
+  
+      <!-- Modal -->
+      <div class="modal fade" id="secondModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                  <div class="modal-header d-block border-0 pb-0">
+                      <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="exampleModalLabel2">REGISTRAR</h1>
+                      <p class="modal-secondary text-center custom-secondary-color p-0 m-0">ENTER STUDENT ID</p>
+                      <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body text-center pb-0">
+                      <input type="text" class="form-control text-center rounded-pill border-1 border-dark custom-primary-color font-weight-bold" placeholder="">
+                  </div>
+                  <div class="modal-footer d-flex flex-column border-0">
+                      <button type="button" class="btn btn-yes px-4 rounded-pill" data-bs-toggle="modal" data-bs-target="#thirdModal">DONE</button>
+                      <button href="#" class="btn btn-outline-warning" data-bs-toggle="modal"
+                      data-bs-target="#admissionModal" data-title="ADMISSION">Not yet enrolled?
+                      Click here!</button>      
+                  </div>
+              </div>
+          </div>
+      </div>
+  <!-- 2nd MODAL REGISTRAR ENDS -->
+
+  <!-- 3rd MODAL REGISTRAR STARTS -->
+  
+      <!-- Modal -->
+      <div class="modal fade" id="thirdModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                  <div class="modal-header d-block border-0 pb-0">
+                      <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="exampleModalLabel2">REGISTRAR</h1>
+                      <p class="modal-secondary text-center custom-secondary-color custom-italic p-0 m-0">Please proceed to the Registrar’s Office. Your tracking number is:</p>
+                      <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body text-center pb-0">
+                      <span class="custom-primary-color fs-1 queue-number">R0001</span>
+                  </div>
+                  <div class="modal-footer d-flex flex-column border-0">
+                      <button type="button" class="btn btn-yes px-4 rounded-pill" data-bs-dismiss="modal">DONE</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <!-- 3rd MODAL REGISTRAR ENDS -->
+
+    <!-- AdmissionModal -->
+    <div class="modal fade" id="admissionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header d-block border-0">
+                    <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="modalTitle1">ADMISSION
+                    </h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body text-center custom-italic custom-bold custom-primary-color">
+                    Do you wish to queue at the selected office?
+                </div>
+                <div class="modal-footer d-flex justify-content-center border-0">
+                    <button type="button" class="btn btn-yes px-4 rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#thirdModal" id="ADMISSIONBTN" onclick="registerStudent()">YES</button>
+                    <button type="button" class="btn btn-no px-4 rounded-pill" data-bs-dismiss="modal">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
