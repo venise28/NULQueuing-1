@@ -45,7 +45,7 @@
                         data-bs-target="#firstModal" data-title="REGISTRAR">REGISTRAR</button>
                     <button href="#" class="fw-bold btn btn-blue p-5 m-2 flex-grow-1" data-bs-toggle="modal"
                         data-bs-target="#firstModal" data-title="ACCOUNTING">ACCOUNTING</button>
-                    <a href="academics.html" class="fw-bold btn btn-yellow p-5 m-2 flex-grow-1">ACADEMICS</a>
+                    <button href="#" class="fw-bold btn btn-yellow p-5 m-2 flex-grow-1" data-bs-toggle="modal" data-bs-target="#acadModal" data-title="ACADEMICS">ACADEMICS</button>
                     <a href="otheroffices.html" class="fw-bold btn btn-blue p-5 m-2 flex-grow-1">OTHER OFFICES</a>
                 </div>
                 <button onclick="history.back()" class="btn btn-back p-1 m-2 float-end"><img src="assets/backbtn.png" alt="Back" class="img-fluid"
@@ -70,7 +70,7 @@
                 </div>
                 <div class="modal-footer d-flex justify-content-center border-0">
                     <button type="button" class="btn btn-yes px-4 rounded-pill" data-bs-toggle="modal"
-                        data-bs-target="#thirdModal" id="ADMISSIONBTN" onclick="registerStudent()">YES</button>
+                        data-bs-target="#thirdModal"onclick="registerStudent()">YES</button>
                     <button type="button" class="btn btn-no px-4 rounded-pill" data-bs-dismiss="modal">NO</button>
                 </div>
             </div>
@@ -103,6 +103,52 @@
     </div>
     <!-- 3rd MODAL REGISTRAR ENDS -->
 
+    <!--Academics Modal-->
+
+        <div class="modal fade" id="acadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header d-block border-0 pb-0">
+                        <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="modalTitle1">
+                            Loading...</h1>
+                        <p class="modal-secondary fst-italic text-center custom-secondary-color p-0 m-0">Please select your program chair:</p>
+                    </div>
+                    <div class="modal-body text-center pb-0  my-3">
+                        <select class="h5 form-select text-center selectpicker rounded border-1 mb-2 border-dark font-weight-bold"
+                            aria-label="Default select example" id="program-chair">
+                            <option selected >Select Here</option>
+                            <option value="COLLEGE OF COMPUTER STUDIES">Marlon A. Diloy</option>
+                            <option value="Vincent Rivera">Vincent Rivera</option>
+                        </select>
+                    </div>
+    
+                    <div class="modal-footer d-flex justify-content-center border-0">
+                        <button type="button" class="btn btn-no px-4 rounded" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="button" class="btn btn-yes px-4 rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#acadModal2">DONE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="acadModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header d-block border-0 pb-0">
+                        <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="modalTitle1">
+                            Loading...</h1>
+                        <p class="modal-secondary fst-italic text-center custom-secondary-color p-0 m-0">Do you wish to queue at the selected office?</p>
+                    </div>
+<!--display option value here-->
+    
+                    <div class="modal-footer d-flex justify-content-center border-0">
+                        <button type="button" class="btn btn-no px-4 rounded" data-bs-dismiss="modal">NO</button>
+                        <button type="button" class="btn btn-yes px-4 rounded-pill" data-bs-toggle="modal"
+                        data-bs-target="#thirdModal"onclick="registerStudent()">YES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>

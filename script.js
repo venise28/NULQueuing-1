@@ -91,7 +91,8 @@ $(".btn").click(function() {
     updateModalTitle("#firstModal", modalTitle);
     updateModalTitle("#secondModal", modalTitle);
     updateModalTitle("#thirdModal", modalTitle);
-    updateModalTitle("#admissionModal", modalTitle);
+    updateModalTitle("#acadModal", modalTitle);
+    updateModalTitle("#acadModal2", modalTitle);
 });
 
 
