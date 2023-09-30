@@ -49,7 +49,7 @@ function registerStudent() {
 // queue student
 function registerGuest() {
     localStorage.setItem("studentId", "GUEST");
-    localStorage.setItem("program", "GUEST");
+    localStorage.setItem("program", "-");
     var studentId = localStorage.getItem("studentId");
     var program = localStorage.getItem("program");
     var office = document.getElementById("modalTitle1").innerText;
