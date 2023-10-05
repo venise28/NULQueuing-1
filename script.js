@@ -57,7 +57,11 @@ function registerGuest() {
     $.ajax({
         type: "POST",
         url: "process.php",
-        data: { studentId: studentId, program: program, office: office },
+        data: { 
+            studentId: studentId, 
+            program: program, 
+            office: office 
+        },
         dataType: "json",
         success: function (response) {
             if (response.success) {
@@ -93,13 +97,80 @@ $(".btn").click(function() {
     updateModalTitle("#thirdModal", modalTitle);
     updateModalTitle("#acadModal", modalTitle);
     updateModalTitle("#acadModal2", modalTitle);
+    updateModalTitle("#acadModal3", modalTitle);
 });
 
 
 // DONE EVENT LISTENER
-document.querySelector("#thirdModal .btn-yes").addEventListener("click", function () {
+document.querySelector("#btn-back").addEventListener("click", function () {
     // Clear storage
     localStorage.removeItem("studentId");
+    localStorage.removeItem("program");
     
     window.location.href = "index.html";
+});
+
+
+// Function to populate the select dropdown
+function populateProgramChairs() {
+    // fetch data
+    $.ajax({
+        url: "academics.php",
+        type: "GET",
+        success: function (data) {
+            $("#program-chair-select").append(data);
+        }
+    });
+
+    $("#done-button").click(function () {
+
+        var selectedOption = $("#program-chair-select option:selected");
+        var name = selectedOption.text().split(" - ")[0];
+        $("#selectedOptionValue").text(name);
+
+
+    });
+
+    // Handle the submit button click event
+    $("#submit-button").click(function () {
+        var studentId = localStorage.getItem("studentId");
+        var selectedOption = $("#program-chair-select option:selected");
+
+        var name = selectedOption.text().split(" - ")[0];
+        var program = selectedOption.text().split(" - ")[1];
+        var program_queue = localStorage.getItem("program");
+        var office = document.getElementById("modalTitle1").innerText;
+        
+
+        // Send data to the server to insert into the 'academics' table
+        $.ajax({
+            url: "academics.php",
+            type: "POST",
+            data: {
+                concern: name,
+                program: program,
+                studentId: studentId,
+                office: office,
+                program_queue: program_queue,
+            },
+            dataType: "json",
+            success: function (response) {
+                if (response.success) {
+                    var queueNumber = response.queue_number;
+                    document.getElementById("queueNumber").innerText = queueNumber;
+                    $('#acadModal3').modal('show');
+                } else {
+                    alert("Error: " + response.message);
+                }
+            },
+            error: function () {
+                alert("An error occurred.");
+            }
+        });
+    });
+}
+
+
+$(document).ready(function () {
+    populateProgramChairs();
 });

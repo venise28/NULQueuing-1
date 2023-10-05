@@ -18,23 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studentId = $_POST["studentId"];
     $program = $_POST["program"];
 
-    // Set student ID to "GUEST" if the office is "ADMISSION"
-    // if ($office === "ADMISSION") {
-    //     $studentId = "GUEST";
-    // } else {
-    //     // Validate the student ID for other offices
-    //     if (!validateStudentID($studentId)) {
-    //         echo json_encode(["success" => false, "message" => "Student ID does not exist"]);
-    //         exit;
-    //     }
-    // }
+
 
     // Get the next queue number for the selected office
     $queueNumber = getNextQueueNumber($office);
 
     // Insert the record into the database
-    $timestamp = date("Y-m-d H:i:s");
-    $sql = "INSERT INTO queue (student_id, program, queue_number, office, timestamp) VALUES ('$studentId', '$program', '$queueNumber', '$office', '$timestamp')";
+    $sql = "INSERT INTO queue (student_id, program, queue_number, office) VALUES ('$studentId', '$program', '$queueNumber', '$office')";
 
     if ($conn->query($sql) === TRUE) {
         echo json_encode(["success" => true, "queue_number" => $queueNumber]);
@@ -45,13 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Invalid request";
 }
 
-// Function to validate a student ID
-// function validateStudentID($studentId) {
-//     global $conn;
-//     $sql = "SELECT * FROM studentid_list WHERE student_id = '$studentId'";
-//     $result = $conn->query($sql);
-//     return $result->num_rows > 0;
-// }
 
 // Function to get the next queue number for a given office
 function getNextQueueNumber($office) {
