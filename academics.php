@@ -12,62 +12,63 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") { 
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (isset($_GET['program'])) {
+        $program = $_GET['program'];
+        $query = "SELECT id, name FROM program_chairs WHERE program = '$program'";
+        $result = mysqli_query($conn, $query);
 
-    // Fetch data from the program_chair table
-$sql = "SELECT name, program FROM program_chairs";
-$result = mysqli_query($conn, $sql);
+        $data = array();
 
-if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo '<option value=" ">' . $row["name"] . ' - ' . $row["program"] . '</option>';
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $data[$row['id']] = $row['name'];
+            }
+        }
+
+        echo json_encode($data);
+    } else {
+        echo json_encode(array()); 
     }
-} else {
-    echo '<option value="">No program chairs available</option>';
-}
-
-
-}
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-// Get data from the POST request
-$concern = $_POST["concern"];
-$program = $_POST["program"];
-$studentId = $_POST["studentId"];
-
-
-$queueNumber = getNextQueueNumber($program);
-
-// Validate and sanitize user inputs if needed
-
-// Perform the database insertion
-$sql = "INSERT INTO academics (concern, program, student_id, queue_number) VALUES ('$concern', '$program', '$studentId', '$queueNumber')";
-
-if ($conn->query($sql) === TRUE) {
-    // Insert into queue table
-    $office = $_POST["office"];
-    $program_queue = $_POST["program_queue"];
+} elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get data from the POST request
+    $concern = $_POST["concern"];
+    $program = $_POST["program"];
     $studentId = $_POST["studentId"];
 
-    $queueSql = "INSERT INTO queue (student_id, program, queue_number, office) VALUES ('$studentId', '$program_queue', '$queueNumber', '$office')";
-    if ($conn->query($queueSql) === TRUE) {
-        echo json_encode(["success" => true, "queue_number" => $queueNumber]);
+    $queueNumber = getNextQueueNumber($program);
+
+
+    // database insert
+    $sql = "INSERT INTO academics (concern, program, student_id, queue_number) VALUES ('$concern', '$program', '$studentId', '$queueNumber')";
+
+    if ($conn->query($sql) === TRUE) {
+        // Insert into queue table
+        $office = $_POST["office"];
+        $program_queue = $_POST["program_queue"];
+        $studentId = $_POST["studentId"];
+
+        // Check $office and set it to "ACADEMICS" if true
+        $allowedOffices = ["SCS", "SEA", "SAS", "SABM", "SHS"];
+        if (in_array($office, $allowedOffices)) {
+            $office = "ACADEMICS";
+        }
+
+        $queueSql = "INSERT INTO queue (student_id, program, queue_number, office) VALUES ('$studentId', '$program_queue', '$queueNumber', '$office')";
+        if ($conn->query($queueSql) === TRUE) {
+            echo json_encode(["success" => true, "queue_number" => $queueNumber]);
+        } else {
+            echo json_encode(["success" => false, "message" => "Error inserting into queue table: " . $conn->error]);
+        }
     } else {
-        echo json_encode(["success" => false, "message" => "Error inserting into queue table: " . $conn->error]);
+        echo json_encode(["success" => false, "message" => "Error inserting into academics table: " . $conn->error]);
     }
 } else {
-    echo json_encode(["success" => false, "message" => "Error inserting into academics table: " . $conn->error]);
+    echo "Invalid request";
 }
-} else {
-echo "Invalid request";
-}
-
-
 
 function getNextQueueNumber($program) {
     global $conn;
-    // Define office-specific prefixes
     $prefixes = [
         "SCS" => "SCS",
         "SAS" => "SAS",
@@ -84,20 +85,18 @@ function getNextQueueNumber($program) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $maxQueue = $row['max_queue'];
-        // Extract the numeric part of the queue number
+
         $numericPart = (int)substr($maxQueue, strlen($prefix));
-        // Increment the numeric part
+
         $nextNumericPart = $numericPart + 1;
-        // Format the next queue number
+
         $nextQueue = $prefix . str_pad($nextNumericPart, 3, '0', STR_PAD_LEFT);
         return $nextQueue;
     } else {
-        // If no records exist for the office, start from 001
+
         return $prefix . "001";
     }
 }
-
-
 
 $conn->close();
 ?>

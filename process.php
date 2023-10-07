@@ -1,24 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "queuing_system";
-
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+@include 'database.php';
 
 // Handle the request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $office = $_POST["office"];
     $studentId = $_POST["studentId"];
     $program = $_POST["program"];
-
-
 
     // Get the next queue number for the selected office
     $queueNumber = getNextQueueNumber($office);

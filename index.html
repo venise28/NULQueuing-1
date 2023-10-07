@@ -14,8 +14,34 @@
 </head>
 
 <body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="rounded-end-5 col-4 blue-bg position-fixed">
+                <img src="assets/NU_shield.svg" alt="Image" class="img-fluid img_logo"
+                    style="max-height: auto; max-width: 40%;">
+                <div class="mt-4">
+                    <h1 class="fw-bolder text-light text-center">NU LAGUNA</h1>
+                    <h4 class="fw-bold text-light text-center">QUEUING SYSTEM</h4>
+                </div>
+
+            </div>
+            <div class="col-8 p-5 offset-4">
+                <h4 class="fst-italic fs-2 pt-5 fw-bold text-center nu_color">WELCOME!</h4>
+                <p class="card-text fw-bold mb-1 nu_color text-center fst-italic fs-5">Please select your identity.</p>
+                <div class="d-flex justify-content-center align-items-center flex-wrap">
+                    <div class="text-center row mt-5 mx-2" style="margin-bottom: 10rem;">
+                        <a href="nulqueue.html" class="btn btn-select-yellow my-3 fw-bold p-4 m-2" onclick="registerGuest()">APPLICANT / GUEST</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#exStudent"
+                            class="btn btn-select-blue fw-bold p-4 m-2">EXISTING STUDENT</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     <!-- Header -->
-    <header class="custom-header py-4">
+    <!-- <header class="custom-header py-4">
         <div class="mb-1">
             <img src="assets/NU_shield.svg" alt="Image" class="img-fluid ms-3 me-3 float-start"
                 style="max-height: auto; max-width: 5rem;">
@@ -25,10 +51,10 @@
             <h5 class="fw-bold text-light">QUEUING SYSTEM</h5>
         </div>
 
-    </header>
+    </header> -->
 
     <!-- Content -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="row justify-content-center align-items-center" style="height: 80vh;">
             <div class="col-sm-6">
                 <div class="card p-3 border-dark">
@@ -44,7 +70,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- modals -->
@@ -54,17 +80,17 @@
                 <div class="modal-header d-block border-0 pb-0">
                     <h1 class="modal-title fs-4 text-center custom-bold custom-primary-color" id="modalTitle2">
                         EXISTING STUDENT</h1>
-                    <p class="modal-secondary fst-italic text-center custom-primary-color p-0 m-0">PLEASE SELECT YOUR PROGRAM AND
-                        ENTER YOUR STUDENT ID</p>
+                    <p class="modal-secondary fst-italic text-center custom-primary-color p-0 m-0">Please select your program and
+                        enter your student ID</p>
                 </div>
                 <div class="modal-body text-center pb-0  my-3">
                     <select class="h5 form-select text-center selectpicker rounded border-1 mb-2 border-dark font-weight-bold"
                         aria-label="Default select example" id="program">
-                        <option value="SCS">SCS - SCHOOL OF COMPUTER STUDIES</option>
-                        <option value="SEA">SEA - SCHOOL OF ENGINEERING AND ARCHITECTURE</option>
-                        <option value="SAS">SAS - SCHOOL OF ARTS AND SCIENCES</option>
-                        <option value="SABM">SABM - SCHOOL OF ACCOUNTANCY, AND BUSINESS MANAGEMENT</option>
-                        <option value="SHS">SHS - SENIOR HIGH SCHOOL</option>
+                        <option value="SCS">SCS - School of Computer Studies</option>
+                        <option value="SEA">SEA - School of Engineering and Architecture</option>
+                        <option value="SAS">SAS - School of Arts and Sciences</option>
+                        <option value="SABM">SABM - School of Accountance and Business Management</option>
+                        <option value="SHS">SHS - Senior High School</option>
                     </select>
                     <input type="text"
                         class="form-control text-center rounded border-1 border-dark custom-primary-color font-weight-bold"
