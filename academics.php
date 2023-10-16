@@ -1,11 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "queuing_system";
-
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+@include 'database.php';
 
 // Check connection
 if ($conn->connect_error) {
@@ -15,14 +9,14 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET['program'])) {
         $program = $_GET['program'];
-        $query = "SELECT id, name FROM program_chairs WHERE program = '$program'";
+        $query = "SELECT id, full_name FROM program_chairs WHERE program = '$program'";
         $result = mysqli_query($conn, $query);
 
         $data = array();
 
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $data[$row['id']] = $row['name'];
+                $data[$row['id']] = $row['full_name'];
             }
         }
 

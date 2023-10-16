@@ -13,25 +13,6 @@
         <link rel="stylesheet" type="text/css" href="index.css">
     </head>
 <body>
-    <script>
-        // Retrieve the userData object from local storage
-        var userData = JSON.parse(localStorage.getItem("userData"));
-
-        if (userData) {
-            var studentId = userData.studentId;
-            var program = userData.program;
-
-            // Use the studentId and program as needed
-            console.log("Student ID: " + studentId);
-            console.log("Selected Program: " + program);
-
-            // Clear the userData from local storage if needed
-            // localStorage.removeItem("userData");
-        } else {
-            // Handle the case when userData is not found in local storage
-            console.log("userData not found in local storage");
-        }
-    </script>
     <div class="container-fluid">
         <div class="row">
             <div class="rounded-end-5 col-4 blue-bg position-fixed">
